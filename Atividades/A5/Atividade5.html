@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+
+    <style>
+        input,
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        fieldset {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="" method="GET" target="_top">
+        <button type="button" onclick="alert('Já assitiu Vincenzo?')">
+            Dê uma olhadinha
+        </button>
+
+        <label for="idAvatar"></label>
+        <input type="image" src="https://img.ibxk.com.br/2021/05/21/21172042194352.jpg" alt="avatar" name="avatar"
+            id="idAvatar" width="300" height="200">
+
+        <fieldset>
+            <legend>Bem vindo ao mundo dos doramas</legend>
+            <input type="text" name="dados" id="iddados" value="Informe alguns dados!" readonly>
+            <label for="idNome">Nome</label>
+            <input type="nome" name="nome" id="idNome" required="required" autofocus>
+            <label for="idMail">E-mail</label>
+            <input type="email" name="mail" id="idMail" required="required" autofocus>
+            <label for="idIdade">Quando é o seu aniversário</label>
+            <input type="date" name="idade" id="idIdade">
+
+            <label for="idDoramas">Qual é o seu dorama favorito?</label>
+            <select name="doramas" id="idDoramas">
+                <option value="vincenzo">Vincenzo </option>
+                <option value="true beauty">True Beauty</option>
+                <option value="jardim de meteoros">Jardim de Meteoros</option>
+                <option value="what's wrong with secretary kim">What’s Wrong with Secretary Kim</option>
+            </select>
+
+            <label for="idMensagem">Caso não encontre seu dorama na lista, informe no campo abaixo:</label>
+            <textarea name="message" id="idMensagem" cols="20" rows="5"></textarea>
+
+            <label for="browsers">Qual navegador você usa?</label>
+            <input list="browsers" name="browser" id="browser">
+            <datalist id="browsers">
+                <option value="Edge">Cara nova</option>
+                <option value="Firefox">Já teve seu tempo</option>
+                <option value="Chrome">Bem pesadinho </option>
+                <option value="Opera">O GX é tudo</option>
+                <option value="Safari">Navegador de rico</option>
+            </datalist>
+
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Apagar">
+
+    </form>
+</body>
+
+</html>
