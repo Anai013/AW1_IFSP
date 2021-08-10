@@ -366,7 +366,7 @@ nav.show div.icon-close {
   background: var(--title-color);
   border-radius: 3px;
   position: relative;
-  animation: fillBars 20s 2;
+  animation: fillBars 13s 2;
 }
 
 .skill-per::before {
