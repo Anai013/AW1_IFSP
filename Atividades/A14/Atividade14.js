@@ -77,18 +77,15 @@ const DOM = {
 
   innerHTMLTransaction(transaction, index) {
     const CSSclass = transaction.amount > 0 ? 'income' : 'expense'
-
     const amount = Utils.formatCurrency(transaction.amount)
-
     const html = `
-      <td class="description">${transaction.description}</td>
-      <td class="${CSSclass}">${amount}</td>
-      <td class="date">${transaction.date}</td>
-      <td>
-          <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação">
-      </td>
+      <tr>
+            <td class="description">${transaction.description}</td>
+            <td class="${CSSclass}">${amount}</td>
+            <td class="date">${transaction.date}</td>
+            <td><img onclick="Transaction.remove(${index})" src="assets/minus.svg" alt="Remover Transação"></td>
+        </tr>
       `
-
     return html
   },
 
@@ -111,8 +108,8 @@ const DOM = {
 
 const Utils = {
   formatAmount(value) {
+    value = Number(value) * 100
     value = Number(value.replace(/\,\./g, '')) * 100
-
     return value
   },
 
@@ -154,9 +151,9 @@ const Form = {
     const { description, amount, date } = Form.getValues()
 
     if (
-      description.trim() === '' ||
-      amount.trim() === '' ||
-      date.trim() === ''
+      description.trim() === ' ' ||
+      amount.trim() === ' ' ||
+      date.trim() === ' '
     ) {
       throw new Error('Por favor, preencha todos os campos')
     }
@@ -205,6 +202,7 @@ const App = {
 
     Storage.set(Transaction.all)
   },
+
   reload() {
     DOM.clearTransactions()
     App.init()
