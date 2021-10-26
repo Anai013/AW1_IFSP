@@ -1,0 +1,312 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  background-image: url(../assets/images/space.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  z-index: 5;
+  font-size: 5rem;
+  color: #c7c0c0;
+
+  text-align: center;
+}
+
+.buttons {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttons h1 {
+  cursor: pointer;
+  color: #00c000;
+  animation: blink 2s infinite;
+  font-weight: 800;
+}
+
+.buttons h1:hover {
+  color: #032a03;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.container {
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: fit-content;
+  width: 86%;
+}
+
+.panel {
+  border: 8px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../assets/images/frame.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.boxPanel {
+  display: flex;
+  flex-direction: column;
+  padding: 4%;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerLedPanel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.computerLedPanel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.led {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  border: solid 5px #202020;
+  background-image: url(../assets/images/led.svg);
+  background-size: contain;
+  box-shadow: -2px 7px #827e7f;
+}
+
+.panelMemory {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  grid-template-rows: repeat(3, 33.3%);
+  margin: 25px 0;
+  flex: 1;
+  width: 96%;
+  height: 100%;
+  background: black;
+  padding: 5px;
+  border-radius: 1px;
+  box-shadow: 0px 0px 0px 4px rgba(57, 57, 57, 1),
+    0px 0px 0px 9px rgba(197, 197, 197, 1);
+}
+
+.memory {
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+}
+
+.memoryActive {
+  animation: mActive 0.3s;
+}
+
+@keyframes mActive {
+  to {
+    background: #44a8fe;
+  }
+}
+
+.ledOn {
+  border: solid 5px #202020;
+  background-image: url(../assets/images/led_green.svg);
+  background-size: contain;
+}
+
+.playerMemory {
+  display: grid;
+  gap: 4%;
+  grid-template-columns: repeat(3, 31.3%);
+  grid-template-rows: repeat(3, 31.3%);
+  margin: 25px 0;
+  flex: 1;
+  width: 96%;
+  height: 100%;
+  padding: 5px;
+  border-radius: 1px;
+}
+
+.player_memory {
+  background: #686868;
+  box-shadow: 0px 0px 0px 4px rgb(10, 10, 10);
+  border: inset 4px #505050;
+  border-radius: 4px;
+  cursor: not-allowed;
+}
+
+.playerMemoryActive {
+  background: #c7c0c0;
+  box-shadow: 0px 0px 0px 4px rgb(10, 10, 10);
+  border: inset 4px #505050;
+  cursor: pointer;
+}
+
+.playerMemoryError {
+  animation: errorMemory 0.2s;
+  animation-iteration-count: 4;
+}
+
+.playerLedError {
+  animation: errorLed 0.2s;
+  animation-iteration-count: 4;
+}
+
+.playerMemoryComplete {
+  animation: completeMemory 0.2s;
+  animation-iteration-count: 4;
+}
+
+.playerLedComplete {
+  animation: completeLed 0.2s;
+  animation-iteration-count: 4;
+}
+
+.last {
+  box-shadow: 0px 0px 0px 4px rgb(10, 10, 10), 2px 22px 0px -9px#575757,
+    1px 18px 0px 2px #6a6a6a;
+}
+
+@keyframes errorLed {
+  to {
+    border: solid 5px #202020;
+    background-image: url(../assets/images/led_red.svg);
+  }
+}
+
+@keyframes errorMemory {
+  to {
+    background: #af0f0f;
+    box-shadow: 0px 0px 0px 4px #952c01 !important;
+    border: inset 4px #200200;
+  }
+}
+
+@keyframes completeLed {
+  to {
+    border: solid 5px #202020;
+    background-image: url(../assets/images/led_green.svg);
+  }
+}
+
+@keyframes completeMemory {
+  to {
+    background: #00c000;
+    box-shadow: 0px 0px 0px 4px #017a01 !important;
+    border: inset 4px #200200;
+  }
+}
+
+@keyframes playermemoryClick {
+  to {
+    background: #289cbf;
+    box-shadow: 0px 0px 0px 4px #133e71;
+    border: inset 4px #03182e;
+  }
+}
+
+/**********************MEDIA QUERIES**********************/
+@media screen and (max-width: 936px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .panel {
+    margin: 15px 0;
+    min-width: 280px;
+    min-height: 317px;
+  }
+
+  .panel .boxPanel {
+    min-height: 268px;
+    min-width: 79.8%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 642px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .panel {
+    margin: 0 15px;
+    min-width: 280px;
+    min-height: 317px;
+  }
+
+  .panel .boxPanel {
+    min-height: 268px;
+    min-width: 79.8%;
+  }
+}
+
+@media screen and (min-width: 776px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .panel {
+    margin: 0 15px;
+    min-width: 368px;
+    min-height: 417px;
+  }
+
+  .panel .boxPanel {
+    min-height: 353px;
+    min-width: 79.8%;
+  }
+}
+
+@media screen and (min-width: 1159px) {
+  .panel {
+    margin: 0 15px;
+    min-width: 456px;
+    min-height: 517px;
+  }
+
+  .panel .boxPanel {
+    min-height: 428px;
+    min-width: 79.8%;
+  }
+}
