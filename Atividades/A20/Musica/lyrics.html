@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 20 </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./lyrics.css">
+
+    <!-- AXIOS-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="buscar_music">
+            <h1 class="title">Procure uma letra de música</h1>
+            <br>
+
+            <label for="artist">Artista: </label>
+            <input type="text" class="form-control" id="artist">
+
+            <label for="song">Música: </label>
+            <input type="text" class="form-control" id="song">
+
+            <div class="button">
+                <input onclick="doSubmit()" type="button" value="Buscar" id="btn">
+
+            </div>
+            <br>
+            <br>
+            <div id="music"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT-->
+    <script src="./lyrics.js"></script>
+</body>
+
+</html>

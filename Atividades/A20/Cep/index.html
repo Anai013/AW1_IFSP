@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./style.css">
+    <!--AXIOS-->
+    <script src="https://unpkg.com/axios@0.21.4/dist/axios.min.js"></script>
+
+    <title>Atividade 20</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="buscar_cep">
+            <h1 class="title">Busque AQUI</h1>
+            <br>
+            <p> Com apenas o seu CEP receba as informações que precisa!</p>
+            <br>
+
+            <label for="cep">CEP:</label><br>
+            <input type="text" id="cep" name="cep" data-js="cep" />
+
+            <div class="button">
+                <input type="button" value="Procurar CEP" id="btn">
+            </div>
+
+            <label for="road">Rua:</label><br>
+            <input type="text" id="road" name="road" disabled />
+            <br><br>
+
+            <label for="district">Bairro:</label><br>
+            <input type="text" id="district" name="district" disabled />
+            <br><br>
+
+            <label for="city">Cidade:</label><br>
+            <input type="text" id="city" name="city" disabled />
+            <br><br>
+
+            <label for="uf">Estado:</label><br>
+            <input type="text" id="uf" name="uf" disabled />
+        </div>
+    </div>
+
+    <!-- SCRIPT-->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

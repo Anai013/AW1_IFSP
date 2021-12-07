@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ddc3c3;
+}
+
+.container {
+  display: flex;
+}
+
+.buscar_music {
+  color: #b76e79;
+  margin: auto;
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: #b76e79;
+}
+
+input {
+  width: 100%;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #b76e79;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn {
+  width: 20%;
+  color: #fff;
+  background-color: #d9abab;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  height: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+}
+
+.button {
+  display: flex;
+}
+
+#music {
+  text-align: center;
+}
